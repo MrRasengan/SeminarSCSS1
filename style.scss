@@ -1,0 +1,51 @@
+@import 'vars';
+@import 'mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: aqua;
+}
+body {
+    font-family: sans-serif;
+    font-style: normal;
+}
+
+.container {
+    max-width: $widthSite;
+    color: $textSite;
+    margin: 0 auto;
+    background-color: #268790;
+}
+
+.container h3 {
+    color: $textSite;
+}
+
+.container__clr {
+    color: $text;
+}
+
+// Тестовая программа с использованием препроцессора
+
+.nav {
+    display: flex;
+    gap: $gap;
+
+    &__link {
+        text-decoration: none;
+    }
+}
+
+.content {
+    @include displayflex(flex, wrap, center, center);
+    gap: $gap;
+
+    &__item {
+        width: $widthSite / 4;
+        height: 200px;
+        border: $borderStyle;
+    }
+}
